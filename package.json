@@ -1,0 +1,24 @@
+{
+  "name": "d280-javascript-programming",
+  "version": "1.0.0",
+  "description": "<strong> **DO NOT DISTRIBUTE OR PUBLICLY POST SOLUTIONS TO THESE LABS. MAKE ALL FORKS OF THIS REPOSITORY WITH SOLUTION CODE PRIVATE. PLEASE REFER TO THE STUDENT CODE OF CONDUCT AND ETHICAL EXPECTATIONS FOR COLLEGE OF INFORMATION TECHNOLOGY STUDENTS FOR SPECIFICS. ** </strong>\r # WESTERN GOVERNORS UNIVERSITY \r ## D280 – JAVASCRIPT PROGRAMMING\r Welcome to JavaScript Programming! \r For specific task instructions and requirements for this assessment, please refer to the course page.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/wgu-gitlab-environment/student-repos/rguzm90/d280-javascript-programming.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://gitlab.com/wgu-gitlab-environment/student-repos/rguzm90/d280-javascript-programming/issues"
+  },
+  "homepage": "https://gitlab.com/wgu-gitlab-environment/student-repos/rguzm90/d280-javascript-programming#readme",
+  "dependencies": {
+    "@angular/cli": "^19.1.6"
+  }
+}
