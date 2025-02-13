@@ -1,18 +1,27 @@
+<!-- 🌌 Night Sky Video Background -->
+<video class="night-sky-video" autoplay loop muted>
+    <source src="assets/night_sky.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<!-- Dark Overlay for Visibility -->
+<div class="overlay"></div>
+
+<!-- Main Map Container -->
 <div class="map-container">
-    <!-- Left Column: SVG Map -->
+    <!-- Left Column: Map -->
     <div class="map-column">
-      <img [src]="mapPath" alt="World Map" class="world-map" (click)="fetchCountryData('US')">
+        <object type="image/svg+xml" data="assets/world-map.svg" class="world-map" id="svgMap"></object>
     </div>
-  
+
     <!-- Right Column: Country Info -->
     <div class="info-column">
-      <h2 *ngIf="countryInfo">{{ countryInfo.name }}</h2>
-      <p *ngIf="countryInfo"><strong>Capital:</strong> {{ countryInfo.capital }}</p>
-      <p *ngIf="countryInfo"><strong>Region:</strong> {{ countryInfo.region }}</p>
-      <p *ngIf="countryInfo"><strong>Income Level:</strong> {{ countryInfo.incomeLevel }}</p>
-      <p *ngIf="countryInfo"><strong>Country Code:</strong> {{ countryInfo.isoCode }}</p>
-      <p *ngIf="countryInfo"><strong>Longitude:</strong> {{ countryInfo.longitude ? countryInfo.longitude : 'N/A' }}</p>
-      <p *ngIf="countryInfo"><strong>Latitude:</strong> {{ countryInfo.latitude ? countryInfo.latitude : 'N/A' }}</p>
+        <h2 *ngIf="countryInfo">{{ countryInfo.name }}</h2>
+        <p *ngIf="countryInfo"><strong>Capital:</strong> {{ countryInfo.capital }}</p>
+        <p *ngIf="countryInfo"><strong>Region:</strong> {{ countryInfo.region }}</p>
+        <p *ngIf="countryInfo"><strong>Income Level:</strong> {{ countryInfo.incomeLevel }}</p>
+        <p *ngIf="countryInfo"><strong>Country Code:</strong> {{ countryInfo.isoCode }}</p>
+        <p *ngIf="countryInfo"><strong>Longitude:</strong> {{ countryInfo.longitude ? countryInfo.longitude : 'N/A' }}</p>
+        <p *ngIf="countryInfo"><strong>Latitude:</strong> {{ countryInfo.latitude ? countryInfo.latitude : 'N/A' }}</p>
     </div>
-  </div>
-  
+</div>

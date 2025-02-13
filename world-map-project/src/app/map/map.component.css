@@ -1,37 +1,145 @@
+/* 🌌 Fullscreen Night Sky Video */
+.night-sky-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -3;
+    background-color: black; /* Fallback */
+}
+
+
+/* 🌌 Dark Overlay to Improve Visibility */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Slight darkness for contrast */
+    z-index: -2; /* Stays above the video */
+}
+
+/* 🌍 Ensure Map Container is Above Video */
 .map-container {
+    position: relative;
+    z-index: 1; /* Ensures the map is above the video */
     display: flex;
-    flex-direction: row; /* ✅ Arrange map and info side-by-side */
+    flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    width: 100%;
-    height: 100vh; /* Full height */
-    padding: 20px;
+    width: 99vw;
+    height: 95vh;
+    padding: 0;
     box-sizing: border-box;
-  }
-  
-  .map-column {
-    flex: 2; /* ✅ 2/3 of the screen for the map */
+    overflow: hidden;
+}
+
+/* 🌍 Adjusted SVG Map Styling */
+.world-map {
+    width: 90vw;  /* ✅ Makes the SVG take up most of the screen width */
+    max-width: 1000px; /* ✅ Prevents it from getting too large */
+    height: auto;
+    display: block;
+    margin: auto; /* ✅ Centers the map */
+    position: relative;
+    z-index: 2; /* ✅ Keeps the map above the video */
+    transition: transform 0.3s ease-out, filter 0.3s ease-out;
+}
+
+/* 🌍 Ensure Map Column is Centered */
+.map-column {
+    flex: 2;
     display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .world-map {
-    width: 100%; /* ✅ Ensures responsive scaling */
-    max-width: 600px;
-  }
-  
-  .info-column {
-    flex: 1; /* ✅ 1/3 of the screen for info */
-    padding: 20px;
-    background: #f8f9fa;
-    border-left: 2px solid #ddd;
-    height: 100%;
-    overflow-y: auto;
-  }
-  
-  h2 {
-    margin-top: 0;
+    justify-content: center; /* ✅ Centers the map horizontally */
+    align-items: center; /* ✅ Centers the map vertically */
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 🌍 Pop-Out Effect on Hover */
+.world-map:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0px 5px 15px rgba(255, 255, 255, 0.3));
+}
+
+
+/* ℹ️ Right-Side Country Info Box */
+.info-column {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    max-width: 320px;
+    padding: 20px 25px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px) saturate(120%);
+    z-index: 3; /* Keeps the info box above everything */
+}
+
+/* Floating Action Button (FAB) */
+.fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #1d0cde;
+    color: white;
     font-size: 24px;
-  }
-  
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    z-index: 4; /* Ensures button is above all elements */
+}
+
+.fab:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Fade-in Animations */
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply Fade-in Animation */
+.world-map, .info-column {
+    animation: fadeInSlide 0.8s ease-out;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .map-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .info-column {
+        position: relative;
+        top: auto;
+        right: auto;
+        max-width: 90%;
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    .world-map {
+        width: 100%;
+        max-width: 100%;
+    }
+}
