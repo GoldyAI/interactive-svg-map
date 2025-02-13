@@ -1,0 +1,37 @@
+.map-container {
+    display: flex;
+    flex-direction: row; /* ✅ Arrange map and info side-by-side */
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    height: 100vh; /* Full height */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .map-column {
+    flex: 2; /* ✅ 2/3 of the screen for the map */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .world-map {
+    width: 100%; /* ✅ Ensures responsive scaling */
+    max-width: 600px;
+  }
+  
+  .info-column {
+    flex: 1; /* ✅ 1/3 of the screen for info */
+    padding: 20px;
+    background: #f8f9fa;
+    border-left: 2px solid #ddd;
+    height: 100%;
+    overflow-y: auto;
+  }
+  
+  h2 {
+    margin-top: 0;
+    font-size: 24px;
+  }
+  
