@@ -4,4 +4,4 @@
 
  
 ## Angular Version
-19.1.6
+17.3.12

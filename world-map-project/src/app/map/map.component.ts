@@ -2,11 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-map',
-  standalone: true,
-  imports: [],
+  standalone: true,  
   templateUrl: './map.component.html',
-  styleUrl: './map.component.css'
+  styleUrls: ['./map.component.css']
 })
-export class MapComponent {
-
-}
+export class MapComponent { }
