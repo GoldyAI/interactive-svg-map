@@ -1,15 +1,15 @@
+<h2>✅ MapComponent is loaded!</h2> <!-- Debugging message -->
 <div class="map-container">
-    <!-- SVG World Map -->
-    <img src="assets/world-map.svg" alt="World Map" class="world-map" (click)="fetchCountryData('US')">
-  
+  <img src="/assets/world-map.svg" alt="World Map" class="world-map">
+
     <!-- Country Info Panel -->
     <div class="country-info" *ngIf="countryInfo">
       <h2>{{ countryInfo.name }}</h2>
       <p><strong>Capital:</strong> {{ countryInfo.capital }}</p>
       <p><strong>Region:</strong> {{ countryInfo.region }}</p>
       <p><strong>Income Level:</strong> {{ countryInfo.incomeLevel }}</p>
-      <p><strong>Population:</strong> {{ countryInfo.population }}</p>
-      <p><strong>GDP:</strong> {{ countryInfo.gdp | currency:'USD' }}</p>
+      <p><strong>Country Code:</strong> {{ countryInfo.isoCode }}</p>
+      <p><strong>Longitude:</strong> {{ countryInfo.longitude ? countryInfo.longitude : 'N/A' }}</p>
+      <p><strong>Latitude:</strong> {{ countryInfo.latitude ? countryInfo.latitude : 'N/A' }}</p>
     </div>
   </div>
-  

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule, NgIf, CurrencyPipe } from '@angular/common'; 
 import { CountryService } from '../services/country.service';
 
@@ -10,10 +10,15 @@ import { CountryService } from '../services/country.service';
   styleUrls: ['./map.component.css'],
   providers: [CountryService] 
 })
-export class MapComponent {
+export class MapComponent implements OnInit {
   countryInfo: any = null; 
+  mapPath = '/assets/world-map.svg'; 
 
   constructor(private countryService: CountryService) {}
+
+  ngOnInit() {
+    this.fetchCountryData('US'); // ✅ Load default country (United States)
+  }
 
   // Fetch country data when a country is clicked
   fetchCountryData(countryCode: string) {
@@ -25,8 +30,9 @@ export class MapComponent {
             capital: data[1][0].capitalCity,     
             region: data[1][0].region.value,     
             incomeLevel: data[1][0].incomeLevel.value, 
-            population: data[1][0].population,   
-            gdp: data[1][0].gdp                 
+            isoCode: data[1][0].id, // ✅ Country ISO Code
+            longitude: data[1][0].longitude, // ✅ Longitude
+            latitude: data[1][0].latitude // ✅ Latitude     
           };
         }
       },
