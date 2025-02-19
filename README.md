@@ -1,2 +1,2 @@
 # World Map Project
-Test this out! https://symphonious-melomakarona-80e65f.netlify.app/map
+Test this out! https://goldyai-interactivemap.netlify.app/map
