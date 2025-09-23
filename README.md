@@ -1,3 +1,4 @@
 # World Map Project
-Test this out! https://goldydev.com/
+Test this out! https://map.goldydev.com/
+
 
